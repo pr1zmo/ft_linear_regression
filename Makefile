@@ -7,7 +7,6 @@ all: run
 
 run:
 	@for file in $(SRC_DIR)/*.py; do \
-		echo "Running $$file..."; \
 		$(PYTHON) $$file; \
 	done
 
