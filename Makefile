@@ -6,9 +6,7 @@ SRC_DIR := src
 all: run
 
 run:
-	@for file in $(SRC_DIR)/*.py; do \
-		$(PYTHON) $$file; \
-	done
+	$(PYTHON) $(SRC_DIR)/main.py
 
 clean:
 	find $(SRC_DIR) -type f -name "*.pyc" -delete
