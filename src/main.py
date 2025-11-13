@@ -1,17 +1,10 @@
-import sys
-import os
-
-# Add src directory to Python path
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
-
 from predict import predict
-from train import train
 
 def main():
-	predict("predict")
+	file_m = input("Please Enter the training data file: ")
+	mileage = input("Please enter the mileage of the car: ")
 	print(predict.__doc__)
-	train("train")
-	print(train.__doc__)
+	predict(file_m, float(mileage))
 
 if __name__ == "__main__":
 	main()

@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
+from train import train
 
-def predict(object: any) -> any:
+def predict(file_n: str, mileage: float) -> any:
 	"""
    The first program will be used to predict the price of a car for a given mileage.
 
@@ -11,6 +12,9 @@ def predict(object: any) -> any:
 
 	estimatePrice(mileage) = thedata0 + (thedata1 ∗ mileage)
 	"""
-	pass
-
-predict("helo")
+	theta0, theta1 = 0, 0
+	price = theta0 + (theta1 * mileage)
+	print("Price before the training: " + str(price))
+	theta0, theta1 = train(file_n)
+	price = theta0 + (theta1 * mileage)
+	print("After the training: " + str(price))
